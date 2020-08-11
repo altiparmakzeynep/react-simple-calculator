@@ -10,24 +10,21 @@ class App extends Component{
       number2:'',
       result:0
     }
-    this.sum = this.sum.bind(this);
-    this.sub = this.sub.bind(this);
-    this.mul = this.mul.bind(this);
-    this.div = this.div.bind(this);
+   
   }
 
-  sum(){
-    const number1 = parseInt(this.state.number1);
-    const number2 = parseInt(this.state.number2);
+ sum = () => {
+  const number1 = parseInt(this.state.number1);
+  const number2 = parseInt(this.state.number2);
 
-    const result = number1 + number2;
+  const result = number1 + number2;
 
-    this.setState({
-      result:result
-    })
-  }
+  this.setState({
+    result:result
+ })
+}
   
-  sub(){
+  sub = () => {
     const number1 = parseInt(this.state.number1);
     const number2 = parseInt(this.state.number2);
 
@@ -38,7 +35,7 @@ class App extends Component{
     })
   }
   
-  mul(){
+  mul = () => {
     const number1 = parseInt(this.state.number1);
     const number2 = parseInt(this.state.number2);
 
@@ -48,7 +45,7 @@ class App extends Component{
       result:result
     })
   }
-  div(){
+  div = () =>{
     const number1 = parseInt(this.state.number1);
     const number2 = parseInt(this.state.number2);
 

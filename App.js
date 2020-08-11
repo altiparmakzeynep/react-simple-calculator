@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet,Text, View, TextInput, Button} from 'react-native';
-
+import Header from './src/components/Header'
 class App extends Component{
   constructor(props){
     super(props);
@@ -61,9 +61,7 @@ class App extends Component{
   render(){
     return(
       <View style={styles.container}> 
-        <View style={styles.header}>
-          <Text style={styles.headerText}>Simple Calculator</Text>
-        </View>
+        <Header header="Simple Calculator"></Header>
         <View style={styles.content}></View>
            <TextInput style={styles.input} 
                       placeholder="enter a number"
@@ -117,21 +115,6 @@ const styles = StyleSheet.create({
     padding:20,
     justifyContent:"center",
     flexDirection:"column"
-  },
-  header:{
-    height:60,
-    paddingTop:10,
-    shadowColor:"#000",
-    shadowOffset:{width:0,height:2},
-    shadowOpacity:0.5,
-    justifyContent:"center",
-    alignItems:"center",
-    backgroundColor:"#A676C2"
-  },
-  headerText:{
-    color:"#fff",
-    fontSize:30,
-    textAlign:"center"
   },
   input:{
     height:50,

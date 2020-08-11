@@ -7,9 +7,60 @@ class App extends Component{
 
     this.state = {
       number1:'',
-      number2:''
+      number2:'',
+      result:0
     }
+    this.sum = this.sum.bind(this);
+    this.sub = this.sub.bind(this);
+    this.mul = this.mul.bind(this);
+    this.div = this.div.bind(this);
   }
+
+  sum(){
+    const number1 = parseInt(this.state.number1);
+    const number2 = parseInt(this.state.number2);
+
+    const result = number1 + number2;
+
+    this.setState({
+      result:result
+    })
+  }
+  
+  sub(){
+    const number1 = parseInt(this.state.number1);
+    const number2 = parseInt(this.state.number2);
+
+    const result = number1 - number2;
+
+    this.setState({
+      result:result
+    })
+  }
+  
+  mul(){
+    const number1 = parseInt(this.state.number1);
+    const number2 = parseInt(this.state.number2);
+
+    const result = number1 * number2;
+
+    this.setState({
+      result:result
+    })
+  }
+  div(){
+    const number1 = parseInt(this.state.number1);
+    const number2 = parseInt(this.state.number2);
+
+    const result = number1 / number2;
+
+    this.setState({
+      result:result
+    })
+  }
+  
+  
+
   render(){
     return(
       <View style={styles.container}> 
@@ -28,19 +79,21 @@ class App extends Component{
            />
            <View style={styles.buttons}>
              <Button title="+"
-                     onPress={()=>{}}
-                     color="pink">
+                     onPress={this.sum}
+                     color="pink"
+                     >
              </Button>
              <Button title="-"
-                     onPress={()=>{}}
-                     color="#30BDBD">
+                     onPress={this.sub}
+                     color="#30BDBD"
+                     >
              </Button>
-             <Button title="/"
-                     onPress={()=>{}}
+             <Button title="x"
+                     onPress={this.mul}
                      color="#5ACE68">
              </Button>
-             <Button title="%"
-                     onPress={()=>{}}
+             <Button title="/"
+                     onPress={this.div}
                      color="#F9A051">
              </Button>
            </View>
@@ -53,6 +106,7 @@ class App extends Component{
                       }}
                       value={this.state.number2}
            />
+            <Text style={styles.result}>Result:{this.state.result} </Text>
       </View>
     )
   }
@@ -75,7 +129,7 @@ const styles = StyleSheet.create({
     shadowOpacity:0.5,
     justifyContent:"center",
     alignItems:"center",
-    backgroundColor:"#F1D96A"
+    backgroundColor:"#A676C2"
   },
   headerText:{
     color:"#fff",
@@ -84,12 +138,18 @@ const styles = StyleSheet.create({
   },
   input:{
     height:50,
+    color:"#000",
+    fontSize:20
   },
   buttons:{
     flexDirection:"row",
     alignItems:"center",
-    justifyContent:"center",
-  
+    justifyContent:"center"
+  },
+  result:{
+    fontSize:35,
+    color:"#A676C2"
+
   }
 });
 
